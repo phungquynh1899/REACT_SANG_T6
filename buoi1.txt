@@ -1,0 +1,66 @@
+
+<body>
+    <div id="main">
+
+    </div>
+    <!-- reactjs sẽ tải xuống rồi mới render -> google ko dọc được nên không đươc chứng nhận, ko thể hiển thị trên kết quả tìm kiếm  -->
+    <!-- phải học thêm nextjs để render ở máy chủ trước (cho google đọc được) -->
+     cách 1: tạo dự án (nặng ~ 200mb)
+     npx create-react-app buoi1 (ko duoc viết hoa)
+     sau khi xong thì cd buoi1 
+     sau đó npm start
+     ctrl c để tắt server
+
+     cách 2: nhẹ hơn (sẽ dùng cách này)
+     npm create vite@latest buoi1_cach2
+    chon react
+    chon javascript
+    gõ cd buoi1_cach2
+    gõ npm install
+    gõ npm run dev (dùng để chạy app)
+    cài thêm es 7 react ..
+
+    cấu trúc thư mục, file main.jsx gọi file app.jsx
+    trong file app.jsx ta sẽ xóa hết mặc định
+    tạo mới 1 component trong app.jsx 
+    nguyên tắc tên component phải viết hoa và tên component phải giống tên file  
+    cuối file phải có export default App
+    function App phải có return ()
+    trong return bắt buộc phải có một cặp thẻ bọc (hay dùng div hoặc <> </>)
+    đổi với hr hoăc img là những thẻ kô có thẻ đóng nên mình gõ <img /> hoặc <hr/>
+
+    jsx cho phép viết hml trong js (nếu bình thường thì phải dùng createElement và appendChild)
+
+    trong file main.jsx, nếu không muón dùng app mà muốn dùng file BAI1.jsx thì phải tự import file BAI.jsx vào main.jsx
+    <script type="text/babel">
+        //Tên hàm bắt buộc viết hoa
+        function Abc(){
+            return "Xin chào đến với môn học react"
+        }
+        let noidung = document.getElementById('main');
+        let root = ReactDOM.createRoot(noidung);
+        root.render(<Abc/>);
+
+chi gui file jsx, ko gui ca thu muc
+
+tajo file Bai1.jsx trong src, tất cả file jsx đều tuân theo khuôn mẫu sau
+import React from 'react'
+function Bai1(){
+    return (
+        <>
+        
+        </>
+    )
+}
+export default Bai1
+
+tất cả css trong react đều tuân thủ camel 
+
+("div",{},[x1, x2 , x3])
+x1 = React.createElement('a',{href: www.google.com},"tôi là thẻ a");
+x2 = React.createElement('a',{href: www.google.com},"tôi là thẻ a");
+
+react có quan tâm đến thứ tự các biên (no hoisting) (coi bài 4.jsx)
+
+có jsx: viết thẳng html vào return
+ko có jsx, phải dùng React.createElement()
