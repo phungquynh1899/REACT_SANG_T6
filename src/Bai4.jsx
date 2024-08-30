@@ -1,20 +1,39 @@
 import React from 'react'
 
-function Bai4(){
-    
-    let a1 = React.createElement('a',{target: "self", href: "https://itc.edu.vn/tu-van-huong-nghiep", title:"Tư vấn hướng nghiệp"},'Tư vấn hướng nghiệp');
-    let a2 = React.createElement('a',{target: "self", href: "https://inside.itc.edu.vn/Secure/Login.aspx?returnurl=%2f", title:"Cổng thông tin nhà trường"},'Cổng thông tin nhà trường');
-    let a3 = React.createElement('a',{target: "self", href: "https://itc.edu.vn/tuyen-dung", title:"Tuyển dụng"},'Tuyển dụng');
-    let a4 = React.createElement('a',{target: "self", href: "https://itc.edu.vn/lien-he", title:"Liên hệ"},'Liên hệ');
-    let li1 = React.createElement('li',{},[a1]);
-    let li2 = React.createElement('li',{},[a2]);
-    let li3 = React.createElement('li',{},[a3]);
-    let li4 = React.createElement('li',{},[a4]);
-    let myList = React.createElement('ul',{},[li1, li2, li3, li4])
-    
+function Bai4() {
     return (
-        <>{myList}</>
+        <>
+            <div class="col">
+                <div class="row g-4 justify-content-center">
+                    <CartItem duongDan = {'public/img/fruite-item-1.jpg'} ten={'Graps'}></CartItem>
+                    <CartItem duongDan = {'public/img/fruite-item-2.jpg'} ten={'Graps'}></CartItem>
+                    <CartItem duongDan = {'public/img/fruite-item-3.jpg'} ten={'Graps'}></CartItem>
+                    <CartItem duongDan = {'public/img/fruite-item-4.jpg'} ten={'Graps'}></CartItem>
+                </div>
+            </div>
+        </>
     )
 }
 
+function CartItem(props) {
+    return (
+        <div className="col-md-6 col-lg-6 col-xl-4">
+            <div className="rounded position-relative fruite-item">
+                <div className="fruite-img">
+                    <img src={props.duongDan} className="img-fluid w-100 rounded-top" alt="" />
+                </div>
+                <div className="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                    style={{ top: '10px', left: '10px' }}>{props.ten}</div>
+                <div className="p-4 border border-secondary border-top-0 rounded-bottom">
+                    <h4>{props.ten}</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                    <div className="d-flex justify-content-between flex-lg-wrap">
+                        <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
+                        <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
 export default Bai4
