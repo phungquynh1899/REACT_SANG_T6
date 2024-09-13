@@ -1,6 +1,7 @@
 (function ($) {
-    "use strict";
 
+    "use strict";
+   
     // Spinner
     var spinner = function () {
         setTimeout(function () {
